@@ -155,52 +155,32 @@ p.svelte-1bwyi2r{margin:0 0 8px 0;line-height:1.5em;margin-bottom:4px;user-selec
     width: fit-content !important;
   }
 }
-/* ===============================
-   채널톡 / 카카오 플로팅 버튼 (강제 표시)
-   =============================== */
-
-/* fixed 요소 잘림 방지 */
-html, body {
-  overflow-x: hidden;
-  overflow-y: visible !important;
-}
-
-/* 플로팅 버튼 */
+/* 채널톡 플로팅 버튼 - 강제 고정 */
 a.kakao-float {
   position: fixed !important;
   right: 24px !important;
   bottom: 24px !important;
-  z-index: 2147483648 !important; /* 모든 요소 위 */
+  z-index: 2147483647 !important;
+
   display: block !important;
-  text-decoration: none !important;
-  cursor: pointer;
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
 }
 
-/* 버튼 이미지 */
 a.kakao-float img {
   width: 64px !important;
   height: 64px !important;
   border-radius: 50%;
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  filter: none !important;
-  background: #fff;
-  box-shadow:
-    0 4px 10px rgba(0, 0, 0, 0.18),
-    0 8px 24px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 
-/* 말풍선 */
 .kakao-float-text {
   position: absolute;
   right: 76px;
   top: 50%;
-  transform: translateY(-50%) translateX(10px);
+  transform: translateY(-50%);
   background: #3b1e1e;
   color: #fff;
   padding: 10px 14px;
@@ -208,36 +188,15 @@ a.kakao-float img {
   font-size: 14px;
   white-space: nowrap;
   opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-
-/* hover 효과 */
-a.kakao-float:hover img {
-  transform: scale(1.08);
-  box-shadow:
-    0 8px 18px rgba(0, 0, 0, 0.25),
-    0 16px 40px rgba(0, 0, 0, 0.28);
+  transition: .3s;
 }
 
 a.kakao-float:hover .kakao-float-text {
   opacity: 1;
-  transform: translateY(-50%) translateX(0);
 }
 
-/* 모바일 */
 @media (max-width: 768px) {
-  a.kakao-float {
-    right: 16px !important;
-    bottom: 16px !important;
-  }
-
-  a.kakao-float img {
-    width: 56px !important;
-    height: 56px !important;
-  }
-
   .kakao-float-text {
-    display: none !important;
+    display: none;
   }
 }
