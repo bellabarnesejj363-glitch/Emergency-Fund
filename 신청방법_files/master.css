@@ -1505,3 +1505,34 @@ div.Bread {
   background-position: center center !important;
   background-repeat: no-repeat !important;
 }
+a.kakao-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 999999;
+  display: block;
+  text-decoration: none;
+}
+
+a.kakao-float img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: block;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.18),
+    0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.kakao-float-text {
+  position: absolute;
+  right: 76px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #3b1e1e;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  white-space: nowrap;
+}
